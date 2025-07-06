@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class secondlargest {
+public static  int max(int arr[]){
+    int maxvalue=Integer.MIN_VALUE;
+    for(int i=0;i<arr.length;i++){
+        if(arr[i] > maxvalue){
+            maxvalue= Math.max(maxvalue,arr[i]);
+        }
+    }
+    return maxvalue;
+
+}
+
+
+public static int smx(int []arr){
+    int maxvalue=max(arr);
+    int smxvalue= Integer.MIN_VALUE;
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]!=maxvalue){
+            smxvalue= Math.max(smxvalue,arr[i]);
+        }
+    }
+    return smxvalue;
+}
+    public static void main(String[] args) {
+    int arr[]={10,20,50,90,100};
+    int secondlargest=smx(arr);
+        System.out.println(secondlargest);
+
+}
+
+}
