@@ -1,0 +1,21 @@
+package Arraypractice;
+
+public class maxsubarraySum {
+    public static int maxsum(int[]arr){
+        int maxsubarraysum = Integer.MIN_VALUE;
+        for (int st = 0; st < arr.length ; st++) {
+            int currsum = 0;
+            for (int end = st; end < arr.length ; end++) {
+                currsum+= arr[end];
+                maxsubarraysum = Math.max(currsum,maxsubarraysum);
+
+            }
+        }
+        return maxsubarraysum;
+    }
+    public static void main(String[] args) {
+        int[]arr = {1,2,3,4,5};
+        int result = maxsum(arr);
+        System.out.println(result);
+    }
+}
