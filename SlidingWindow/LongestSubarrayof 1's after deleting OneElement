@@ -1,0 +1,20 @@
+class Solution {
+    public int longestSubarray(int[] nums) {
+        int n  =nums.length,left=0;
+        int zeroescount = 0;
+        int maxlen = 0; 
+       
+        for(int right = 0;right<n;right++){
+            if(nums[right]==0)zeroescount++;
+            while(zeroescount>1){
+                if( nums[left]==0)zeroescount--;
+                left++;
+            }
+            maxlen = Math.max(maxlen,right-left);
+            
+        }
+        return maxlen;
+        
+           
+    }
+}
