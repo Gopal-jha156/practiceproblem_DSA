@@ -1,0 +1,28 @@
+class Solution {
+    public int maxSatisfied(int[] custo, int[] grumpy, int k) {
+        int n = custo.length;
+        int i=0,j=k-1;
+        int a=i,b=j;
+        int maxunsatisfied=0,unsatisfied=0;
+        for(int x=i;x<=j;x++){
+            if(grumpy[x]==1)unsatisfied+=custo[x];
+        }
+        while(j<n){
+            if(maxunsatisfied<unsatisfied){
+                maxunsatisfied = unsatisfied;
+                a=i;b=j;
+            }
+            i++;j++;
+            if(j<n&&grumpy[j]==1)unsatisfied+=custo[j];
+            if(grumpy[i-1]==1)unsatisfied-=custo[i-1];
+        }
+        for(int x=a;x<=b;x++){
+            grumpy[x]=0;
+        }
+        int satisfied = 0;
+        for(int x=0;x<n;x++){
+            if(grumpy[x]==0)satisfied+=custo[x];
+        }
+        return satisfied;
+    }
+}
