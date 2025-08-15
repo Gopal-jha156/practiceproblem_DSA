@@ -1,0 +1,20 @@
+import java.util.HashMap;
+
+public class mapbasics {
+    public static void main(String[] args) {
+        HashMap<String,Integer>map= new HashMap<>();
+        map.put("Raghav",19);
+        map.put("sonu",56);
+        map.put("Ravi",45);
+//        System.out.println(map);
+        map.put("Raghav",90);
+        map.put("riva",65);
+//        System.out.println(map+" "+map.size());
+//        System.out.println(map.containsKey(44));
+//        map.remove("Ravi");
+//        System.out.println(map+" "+map.size());
+        for (String key:map.keySet()){
+            System.out.println(key+"= "+map.get(key));
+        }
+    }
+}
